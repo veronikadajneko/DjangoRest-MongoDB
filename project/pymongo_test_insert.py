@@ -19,7 +19,7 @@ def get_random_date():
 def get_database():
 
     # Provide the mongodb url to connect python to mongodb using pymongo
-    CONNECTION_STRING = "mongodb://root:example@localhost:27017/mydb?authSource=admin"
+    CONNECTION_STRING = "mongodb://root:example@mongo:27017/mydb?authSource=admin"
 
     # Create a connection using MongoClient.
     client = MongoClient(CONNECTION_STRING)
