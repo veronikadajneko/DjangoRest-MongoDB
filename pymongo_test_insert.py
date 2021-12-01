@@ -6,14 +6,14 @@ from pymongo import MongoClient
 
 
 def get_random_date():
-    start_date = datetime.date(2017, 1, 1)
-    end_date = datetime.date(2020, 2, 1)
+    start_date = datetime.datetime(2017, 1, 1)
+    end_date = datetime.datetime(2020, 2, 1)
 
     time_between_dates = end_date - start_date
     days_between_dates = time_between_dates.days
     random_number_of_days = random.randrange(days_between_dates)
     random_date = start_date + datetime.timedelta(days=random_number_of_days)
-    return str(random_date)
+    return random_date
 
 
 def get_database():
@@ -25,18 +25,17 @@ def get_database():
     client = MongoClient(CONNECTION_STRING)
 
     # Create the database for our example
-    return client.quickstar_quickstar
+    return client.library
 
 
-# This is added so that many files can reuse the function get_database()
 if __name__ == "__main__":
     # Get the database
     dbname = get_database()
-    collection_name = dbname.library_1
+    collection_name = dbname.catalog_texts
 
     for x in range(100):
         item = {
-            'Textual_paragraph': lorem.paragraph(),
+            'textual_paragraph': lorem.paragraph(),
             'author': names.get_full_name(),
             'date': get_random_date()
         }
