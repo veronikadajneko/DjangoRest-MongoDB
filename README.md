@@ -1,5 +1,5 @@
 # How to launch the solution
-1. Clone git repository https://github.com/veronikadajneko/Docker-MongoDB-Django-Rest-Framework.git
+1. Clone git repository https://github.com/veronikadajneko/DjangoRest-MongoDB.git
 2. Go to the project directory
 ```
 cd project
